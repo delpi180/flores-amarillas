@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas — Un detalle especial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bitsCanvas" class="bits-canvas" aria-hidden="true"></canvas>
+
+  <div id="loader" class="loader" role="status" aria-live="polite" aria-label="Cargando">
+    <div class="loader__inner">
+      <div class="loader__sunflower" aria-hidden="true">
+        <svg class="sunflower-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="petalGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#5eead4"/>
+              <stop offset="50%" stop-color="#2dd4bf"/>
+              <stop offset="100%" stop-color="#14b8a6"/>
+            </linearGradient>
+            <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1e293b"/>
+              <stop offset="70%" stop-color="#0f172a"/>
+              <stop offset="100%" stop-color="#020617"/>
+            </radialGradient>
+          </defs>
+          <g class="sunflower-petals" transform="translate(100 100)">
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(30)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(150)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(210)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(300)"/>
+            <ellipse cx="0" cy="-58" rx="14" ry="38" fill="url(#petalGold)" transform="rotate(330)"/>
+          </g>
+          <circle cx="100" cy="100" r="28" fill="url(#centerGrad)"/>
+          <circle cx="100" cy="100" r="24" fill="none" stroke="#2dd4bf" stroke-opacity="0.45" stroke-width="1"/>
+        </svg>
+      </div>
+      <p class="loader__hint"><span class="loader__prompt">&gt;</span> inicializando_buffer<span class="loader__cursor">_</span></p>
+    </div>
+  </div>
+
+  <main id="main" class="main" aria-hidden="true">
+    <div class="main__glow" aria-hidden="true"></div>
+
+    <div class="main__wrap">
+      <div class="main__first" id="firstBlock">
+        <p class="main__message" id="mainMessage">
+          Hoy es un día especial,<br>
+          y estas flores amarillas<br>
+          son un pequeño recordatorio<br>
+          de lo mucho que significas.
+        </p>
+        <button type="button" class="main__cta" id="btnReveal" aria-controls="extraReveal" aria-expanded="false">
+          <span class="main__cta-hex">0x01</span> ejecutar
+        </button>
+      </div>
+      <div class="main__extra" id="extraReveal" aria-hidden="true" hidden>
+        <div class="main__card">
+          <div class="main__card-header"><span class="main__card-dot"></span> output_stream</div>
+          <div class="main__bouquet-wrap">
+            <img
+              class="main__bouquet"
+              src="assets/pngwing.com.png"
+              alt="Ramo de tulipanes amarillos"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="main__bouquet-caption">
+              Las flores de verdad no están en este ramo:<br>
+              <span class="main__bouquet-caption-accent">las verdaderas flores son tus ojos.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
